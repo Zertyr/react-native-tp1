@@ -16,6 +16,7 @@ const TodoPage = () => {
       let todo = service.getData();
 const [todoList, setTodoList] = useState(todo);
     const editTodo = (task: any) => {
+        onChangeText('');
         return setTodoList(service.updateData(task));
      }
 

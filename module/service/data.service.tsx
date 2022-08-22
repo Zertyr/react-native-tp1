@@ -22,7 +22,9 @@ export class TodoService {
             todo.task = data.task;
         }
     });
-    return this.todoData;
+    let newArr:any = [];
+    newArr = this.todoData;
+    return newArr;
 }
 
 changeState(id: any) {
