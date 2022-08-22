@@ -28,11 +28,15 @@ const [todoList, setTodoList] = useState(todo);
         }
     }
     const changeTask = (id: any) => {
-        return setTodoList(service.changeState(id));
+        reformText(' ');
+        setTodoList(service.changeState(id));
+        
     }
 
     const [text, onChangeText] = useState("");
-    
+    const reformText = (text:string) => {
+        onChangeText(text);
+    }
     return(
         <View style={styles.container}>
                 <Text style={styles.title}>TodoPage</Text>

@@ -12,8 +12,16 @@ export class TodoService {
   };
 
   addData(data: TodoModel) {
-    this.todoData.push(data);
-    return this.todoData;
+    if(data.task.length > 0 && data.task !== " ") {
+        let oldName = data.task.replaceAll(' ', '');
+        if(oldName.length > 0 && oldName !== "") {
+            this.todoData.push(data);
+            return this.todoData;
+        }
+        return this.todoData;
+    } else {
+        return this.todoData;
+    }
   }
 
   updateData(data: TodoModel) {
